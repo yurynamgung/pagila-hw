@@ -11,7 +11,19 @@ The following picture illustrates the database's structure:
 
 ## Tasks
 
-1. Fork this repo
+1. Fork this repo and clone it on the lambda server.
+
+   Notice that this repo uses [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
+   These are a tool that allow us to work with very complicated projects by including git repos within other git repos,
+   and here we use submodules to include the original pagila repo.
+   In order to clone the repo with the submodules, you need to run the commands
+   ```
+   $ git clone https://github.com/mikeizbicki/pagila-hw
+   $ cd pagila-hw
+   $ git submodule init
+   $ git submodule update
+   ```
+
 1. Modify the `README.md` file so that the test case image points to your forked repo.
 1. Solve the each of the problems in the `problems` folder.
     1. The folder contains 15 sql files, one for each problem.
