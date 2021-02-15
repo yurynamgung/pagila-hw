@@ -14,4 +14,4 @@ jobs:
         git submodule init
         git submodule update
         docker-compose up -d --build
-        sh check-answers.sh
+        sh check_answers.sh
