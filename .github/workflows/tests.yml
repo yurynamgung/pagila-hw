@@ -1,0 +1,15 @@
+name: tests
+on:
+  push:
+    branches: ['*']
+  pull_request:
+    branches: ['*']
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: docker
+      run: |
+        docker-compose up -d --build
+        sh check-answers.sh
