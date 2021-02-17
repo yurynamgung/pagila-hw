@@ -15,8 +15,6 @@ jobs:
         git submodule update
         docker-compose up -d --build
         docker ps -a
-        echo test
-        docker-compose exec --help
         sleep 20
-        # docker exec pagila-hw_pg_1 ./check_answers.sh
-        docker-compose exec pg ./check_answers.sh
+        docker exec pagila-hw_pg_1 ./check_answers.sh
+        #docker-compose exec pg ./check_answers.sh
