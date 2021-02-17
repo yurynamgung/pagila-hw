@@ -1,12 +1,18 @@
-#!/bin/sh
+#!/bin/bash
 
 failed=false
 
-for problem in problems/*; do
+mkdir -p results
+
+for problem in sql/*; do
     printf "$problem "
-    output=$(docker-compose exec -T --user=postgres pg psql < $problem)
-    result=$(echo "$output" | diff answers/$(basename $problem) -)
-    if [ -z "$result" ]; then
+    problem_id=$(basename ${problem%.sql})
+    result="results/$problem_id.out"
+    expected="expected/$problem_id.out"
+    psql < $problem > $result
+    #$(docker-compose exec -T pg psql < $problem) #> $result
+    DIFF=$(diff -B $expected $result)
+    if [ -z "$DIFF" ]; then
         echo pass
     else
         echo fail

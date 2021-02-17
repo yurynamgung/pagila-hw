@@ -1,4 +1,0 @@
- actor_id | first_name | last_name 
-----------+------------+-----------
-        9 | JOE        | SWANK
-(1 row)
