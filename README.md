@@ -25,11 +25,15 @@ The following picture illustrates the database's structure:
    ```
 
 1. Modify the `README.md` file so that the test case image points to your forked repo.
-1. Solve the each of the problems in the `problems` folder.
-    1. The folder contains 15 sql files, one for each problem.
+1. Solve the each of the problems in the `sql` folder.
+    1. The folder contains one file for each problem.
        At the top of each file is a description of what the file is supposed to compute.
        For each file, write a single `SELECT` statement that computes the correct answer.
-    1. The folder `answers` contains the expected outputs for each problem.
+    1. The folder `expected` contains the expected outputs for each problem.
        You can verify your answer by checking that the output of your `SELECT` statement matches the output in the `answers` folder.
-    1. The script `check_answer.sh` will perform these checks for you automatically using the `diff` command.
+    1. The script `check_answers.sh` will perform these checks for you automatically using the `diff` command.
+       You can run it through docker via
+       ```
+       $ docker-compose exec pg ./check_answers.sh
+       ```
 1. Upload a link to your forked github repo on sakai.
